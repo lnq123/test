@@ -1,0 +1,44 @@
+var event = {
+    this.name = name;
+    this.date = date;
+    this.year = year;
+    this.timeStart = timeStart;
+    this.timeEnd = timeEnd;
+};
+
+function checkevents(a,b){
+    if(a.date != b.date){
+        return;
+    }
+    else if(a.year!=b.year){
+        return;
+    }
+    else if((a.timeStart<b.timeStart&&a.timeEnd>b.timeStart)||
+    (a.timeStart>b.timeEnd&&a.timeEnd<b.timeEnd)){
+        return;
+    }
+    else return a.name + " and " + b.name+ " are conflict!";
+}
+
+var events = new Array();
+var events[1] = new ("A","Feb 23",2017,1500,1650);
+
+var events[2] = new ("B","Feb 25",2017,1200,1300);
+
+var events[3] = new ("C","Feb 24",2017,1700,1730);
+
+var events[4] = new ("D","Feb 24",2017,1100,1730);//overlap
+
+var events[5] = new ("E","Feb 26",2017,1500,1650);
+
+var events[6] = new ("F","Feb 27",2017,1500,1650);
+
+var events[7] = new ("G","Feb 28",2017,1500,1650);
+
+var events[0] = new ("H","Feb 23",2017,1530,1650);//overlap
+
+for(var i = 0;i <7;i++){
+	(var j=1;j<7；j++)
+	checkevents(events[i],event[j]);
+}
+console.log("Done!");
